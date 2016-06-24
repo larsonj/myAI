@@ -1,0 +1,46 @@
+//console commands
+
+// list all creep roles by name
+for (let name in Memory.creeps) console.log(Game.creeps[name], Memory.creeps[name].role);
+
+//  list all creep roles by name (lodash)  
+_.forEach(Game.creeps, function(value, key) {
+  console.log(key, Game.creeps[key].memory.role);
+});
+
+// find room soures by creep
+for (name in Memory.creeps) console.log(Game.creeps[name], Game.creeps[name].room.find(FIND_SOURCES))
+
+// Update a creep memory.property value
+for (key in Memory.creeps) if (Game.creeps[key].memory.role == 'guard') Game.creeps[key].memory.testProp = 'burpAlot';
+
+
+/// create new BIG harvester
+Game.spawns.Spawn1.createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE], undefined, {role: 'harvester'});
+
+
+/// List name, role & carryCapacity ///
+for (name in Memory.creeps) if (Memory.creeps[name].role == 'upgrader') console.log(name, Memory.creeps[name].role, Game.creeps[name].carryCapacity)
+
+
+---------------------------
+// NOT WORKING ////////////
+---------------------------
+
+for (name in Memory.creeps) if (Game.creeps[name].memory.role == 'upgrader') Game.creeps[name].memory.role = 'guard';
+
+
+
+---------------------------
+// EXPERIMENTAL ///////////
+---------------------------
+///
+create tasks
+///
+// 21.15
+var repairTasks = Game.spawn.Spawn1.room.find(FIND_STRUCTURES, {filter: s=>s.structureType != STURCTURE_WALL && s.hits < s.hitsMax * 0.5 && (Memory.tasks[s.id] == undefined || Memory.tasks[s.id].assigned == 0)})
+for (var i =0; i < repairTasks.length; i++) { 
+	repairTasks[i].room.createBuildRepairTask(buildTasks[i]);
+}
+
+QK2Ga62^qp11K4Ov
