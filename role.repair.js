@@ -12,7 +12,6 @@ var roleHarvester = {
             creep.memory.harvesting = false;
 	    }
 	    if(!creep.memory.harvesting && creep.carry.energy == creep.carryCapacity) {
-	        creep.say('Switching to Harvest mode..')
 	        creep.memory.harvesting = true;
 	    }
 	    
@@ -24,18 +23,14 @@ var roleHarvester = {
         }
         else {
             var targets = creep.room.find(FIND_STRUCTURES, {
-                    filter: (structure) => {  // find extensions, spawners and towers, in that order
+                    filter: (structure) => { 
                         return (
-                            structure.structureType == STRUCTURE_TOWER ||
-                            structure.structureType == STRUCTURE_EXTENSION ||
-                            structure.structureType == STRUCTURE_SPAWN 
-                                ) && structure.energy < structure.energyCapacity;
+                            structure.structureType == STRUCTURE_TOWER 
+                                ) && structure.energy < structure.energyCapacity * 0.01;
                     }
             });
             if(targets.length > 0) {
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    let msg = 'moving to: ' + targets[0].name;
-                    //creep.say(msg)
                     creep.moveTo(targets[0]);
                 }
             }
@@ -45,5 +40,9 @@ var roleHarvester = {
 
 module.exports = roleHarvester;
 
-//structure.structureType == STRUCTURE_EXTENSION ||
-//                                structure.structureType == STRUCTURE_SPAWN ||
+/*
+var containers = creep.pos.findInRange(FIND_STRUCTURES, 1, 
+      {filter: {structureType: STRUCTURE_CONTAINER}});
+containers[0].transfer(creep, RESOURCE_ENERGY);
+
+*/

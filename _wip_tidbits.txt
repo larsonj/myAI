@@ -1,0 +1,15 @@
+ var containers = _.filter(creep.room.lookForAtArea(LOOK_STRUCTURES,source.pos.y-1,source.pos.x-1,source.pos.y+1,source.pos.x+1), (structure) => structure.structureType == STRUCTURE_CONTAINER);
+
+
+ var conts = _.filter(creep.room.lookForAtArea(LOOK_STRUCTURES,source.pos.y-1,source.pos.x-1,source.pos.y+1,source.pos.x+1), {structureType: STRUCTURE_CONTAINER});
+    Memory.test = conts[0];
+
+    var containers = _(creep.room.lookForAtArea(LOOK_STRUCTURES,source.pos.y-1,source.pos.x-1,source.pos.y+1,source.pos.x+1))
+           .map('structure')
+           .filter({structureType: STRUCTURE_CONTAINER})
+           .value();
+
+
+           https://files.slack.com/files-pri/T0HJCPP9T-F1LABHYNM/sshot-2.png
+
+           
