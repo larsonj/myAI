@@ -19,7 +19,7 @@ var GARBAGE_COLLECTION_FREQUENCY_TICKS = 25;
 
 module.exports.loop = function() {
 
-	console.log('tick');
+	//console.log('tick');
 
     creepController.run();
     towerController.run();
