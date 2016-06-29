@@ -23,7 +23,8 @@ var reporter = {
         let builders = _.filter(Game.creeps, (creep) => creep.memory.role === 'builder');
         let guards = _.filter(Game.creeps, (creep) => creep.memory.role === 'guards');
         let notSet = _.filter(Game.creeps, (creep) => creep.memory.role === undefined);
-        
+
+        console.log('h: ' + harvesters.length);
         console.log('----------------------');
         //gc.gc();
         _.forEach(Game.creeps, function(value, key) {
@@ -38,6 +39,22 @@ var reporter = {
     }
 };
 
+Room.prototype.stats = function() {
+    return {
+        myCreepsCnt: this.find(FIND_MY_CREEPS).length,
+        enemiesCnt: this.find(FIND_HOSTILE_CREEPS).length,
+        towersCnt: this.find(STRUCTURE_TOWER).length
+    };
+};
+
+var protoT = {
+    tt: function () {
+        // console.log(Game.rooms.W26S29.stats());
+        Game.rooms.W26S29.stats();
+    }
+};
+
+module.exports = protoT;
 module.exports = test;
 module.exports = reporter;
 

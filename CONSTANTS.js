@@ -1,5 +1,5 @@
 var CONSTANTS = {
-	reporting_tick_interval = 5;
+	reporting_tick_interval = 5
 }
 
 var REPORTING_TICK_INTERVAL = CONSTANTS.reporting_tick_interval;

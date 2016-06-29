@@ -1,0 +1,23 @@
+{
+  "name": "myai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsonj/myAI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/larsonj/myAI/issues"
+  },
+  "homepage": "https://github.com/larsonj/myAI#readme",
+  "devDependencies": {
+    "grunt-screeps": "^1.2.1",
+    "jsdoc": "^3.4.0"
+  }
+}

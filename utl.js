@@ -19,12 +19,11 @@ var logger = {
         var Msg = {
             scriptName: 'tower.Controller.js',
             msg: null
-        }
+        };
+    },
     log: function (msgObj) {
         console.log(msgObj.scriptName + ': ' + msgObj.msg);
     }
-        
-    }
 }
 
-module.exports garbageCollector;
+module.exports = garbageCollector;
