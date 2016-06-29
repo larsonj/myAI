@@ -3,6 +3,11 @@
  * @class
  */
 
+/* 
+for (n in Game.spawns) s=Game.spawns[n]; s.room.name 
+var
+*/ 	
+
 var creepController = require('creep.Controller');
 var towerController = require('tower.Controller');
 var towerController2 = require('tower.Controller2');
