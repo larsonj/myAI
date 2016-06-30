@@ -1,7 +1,8 @@
 // todo: set global constant for MAX_WORK_BODY_PARTS for use in energy capactiy calculations
 // todo: set global constant for harvester, builder, upgrader source offsets
+// todo: if all targets are full and carry.energy < 80% of capacity then go harvest
 
-let SOURCE_AFFINITY_HARVESTER = 1;
+let SOURCE_AFFINITY_HARVESTER = 0;
 
 var roleHarvester = {
 
@@ -26,12 +27,14 @@ var roleHarvester = {
                     filter: (structure) => { 
                         return (
                             structure.structureType == STRUCTURE_TOWER 
-                                ) && structure.energy < structure.energyCapacity * 0.01;
+                                ) && structure.energy < structure.energyCapacity * 1.00;
                     }
             });
             if(targets.length > 0) {
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(targets[0]);
+                    creep.memory.role='repair';
+                    game.notify(`reassigned ${creep} to repair`);
                 }
             }
         }

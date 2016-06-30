@@ -13,17 +13,17 @@ var roleBuilder = {
 	    }
 
 	    if(creep.memory.building) {
-	        var targets = creep.room.find(FIND_CONSTRUCTION_SITES //, 
-	               // { filter: (structure) => { 
-                    //    return (
-                            // structure.structureType == STRUCTURE_WALL // ||       
-                            // structure.structureType == STRUCTURE_RAMPART 
-                            // structure.structureType == STRUCTURE_EXTENSION ||
-                            // structure.structureType == STRUCTURE_SPAWN ||
-                            // structure.structureType == STRUCTURE_CONTAINER 
-                            //    );
-                       // } 
-	               // } 
+	        var targets = creep.room.find(FIND_CONSTRUCTION_SITES /*, 
+	                { filter: (structure) => { 
+                        return (
+                             structure.structureType == STRUCTURE_WALL  ||       
+                             structure.structureType == STRUCTURE_RAMPART ||
+                             structure.structureType == STRUCTURE_EXTENSION ||
+                             structure.structureType == STRUCTURE_SPAWN ||
+                             structure.structureType == STRUCTURE_CONTAINER 
+                                );
+                        } 
+	                }  */
 	        );
             if(targets.length) {
                 if(creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
@@ -33,6 +33,9 @@ var roleBuilder = {
             } else {
                 creep.say('Going Idle');
                 creep.moveTo(Game.flags.Flag2);
+                creep.memory.role='repair'; // if no work left then, reassign to repair
+                delete creep.memory.building;
+                creep.memory.status='reassigned';
             }
 	    }
 	    else {

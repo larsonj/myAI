@@ -42,8 +42,8 @@ var towerController = {
             
             var closestDamagedWallStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
                 filter: (structure) =>  (
-                    (structure.hits < structure.hitsMax && structure.structureType == STRUCTURE_WALL && structure.hits < 22200 ) ||
-                    (structure.hits < structure.hitsMax && structure.structureType == STRUCTURE_RAMPART && structure.hits < 31000 ) ||
+                    (structure.hits < structure.hitsMax && structure.structureType == STRUCTURE_WALL && structure.hits < 25000 ) ||
+                    (structure.hits < structure.hitsMax && structure.structureType == STRUCTURE_RAMPART && structure.hits < 21000 ) ||
                     (structure.hits < structure.hitsMax && structure.structureType == STRUCTURE_ROAD && structure.hits < (structure.hitsMax * 0.15) )
                     )
             });                

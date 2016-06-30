@@ -12,7 +12,44 @@ var test = {
 //			}
 //		});
 //		console.log(targets)
-	}
+Memory.creepDesigns = [ 
+    {role: 'harvester', size: 'S', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'harvester', size: 'S', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'harvester', size: 'S', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'harvester', size: 'S', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'harvester', size: 'S', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'builder',   size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'builder',   size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'builder',   size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'builder',   size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'builder',   size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'harvester', size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'harvester', size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'harvester', size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'harvester', size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'harvester', size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'upgrader',  size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'upgrader',  size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'upgrader',  size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'upgrader',  size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'upgrader',  size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'repair',    size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'repair',    size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'repair',    size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'repair',    size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'repair',    size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'Attack',    size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'Attack',    size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'Attack',    size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'Attack',    size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+    {role: 'Attack',    size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]}
+]
+
+_.forEach(Memory.creepDesigns, function (design) {
+    JSON.stringify(design);
+}) 
+
+
 };
 
 var reporter = {
@@ -62,3 +99,4 @@ module.exports = reporter;
 //Game.rooms.<insert room name>.find(FIND_HOSTILE_CREEPS, {
 //    filter:function(enemy){enemy.owner.username !== 'Source Keeper'} // !== or ===, depending on use case
 //});
+

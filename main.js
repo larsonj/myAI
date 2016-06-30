@@ -7,23 +7,24 @@
 for (n in Game.spawns) s=Game.spawns[n]; s.room.name 
 var
 */ 	
+let DEBUG = false;
 
-var creepController = require('creep.Controller');
-var towerController = require('tower.Controller');
-var towerController2 = require('tower.Controller2');
-var gc = require('gc'); // garbage collector
+let creepController = require('creep.Controller');
+let towerController = require('tower.Controller');
+let towerController2 = require('tower.Controller2');
+let gc = require('gc'); // garbage collector
 
 // CONSTANTS
-var GARBAGE_COLLECTION_FREQUENCY_TICKS = 25;
+let GARBAGE_COLLECTION_FREQUENCY_TICKS = 25;
 
 
 module.exports.loop = function() {
 
-	//console.log('tick');
+	if (DEBUG) console.log('tick');
 
     creepController.run();
     towerController.run();
-    towerController2.run();
+    //towerController2.run();
 
 
     if (Game.time % GARBAGE_COLLECTION_FREQUENCY_TICKS == 0) {

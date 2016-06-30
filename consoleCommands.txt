@@ -1,4 +1,12 @@
-//console commands
+---------------------------
+// CONSOLE ////////////////
+---------------------------
+
+// reassign all creeps from one role to another
+for (n in Game.creeps); if (n.memory.role=='harvester') console.log(n)
+
+// tower info
+TOWERS = _.filter(Game.structures, (s) => s.structureType == STRUCTURE_TOWER); JSON.stringify(TOWERS[0].pos.roomName) 
 
 // list all creep roles by name
 for (let name in Memory.creeps) console.log(Game.creeps[name], Memory.creeps[name].role);
@@ -15,8 +23,8 @@ for (name in Memory.creeps) console.log(Game.creeps[name], Game.creeps[name].roo
 for (key in Memory.creeps) if (Game.creeps[key].memory.role == 'guard') Game.creeps[key].memory.testProp = 'burpAlot';
 
 
-/// create new BIG harvester
-Game.spawns.Spawn1.createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE], undefined, {role: 'harvester'});
+/// create new BIG harvester - 900e 
+Game.spawns.Spawn1.createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester'});
 
 
 /// List name, role & carryCapacity ///
@@ -28,7 +36,6 @@ for (name in Memory.creeps) if (Memory.creeps[name].role == 'upgrader') console.
 ---------------------------
 
 for (name in Memory.creeps) if (Game.creeps[name].memory.role == 'upgrader') Game.creeps[name].memory.role = 'guard';
-
 
 
 ---------------------------
@@ -43,4 +50,19 @@ for (var i =0; i < repairTasks.length; i++) {
 	repairTasks[i].room.createBuildRepairTask(buildTasks[i]);
 }
 
-QK2Ga62^qp11K4Ov
+---
+// Calculate number of ticks left
+var ticksLeft = Game.cpu.limit - Game.cpu.getUsed();
+
+// Do I have enough power
+if(ticksLeft > 20) {
+    // TODO: Do some fancy pancy heavy task here! We've got da power!
+}
+---
+
+creep.drop
+
+---------------------------
+// GIT ////////////////////
+---------------------------
+git reset --hard followed by a git clean -f -d

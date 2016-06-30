@@ -1,12 +1,12 @@
 //let CONSTANTS = require(CONSTANTS);
 let REPORTING_TICK_INTERVAL = 90; 
-let REPORTING_TICK_INTERVAL_SHORT = 5;
-let QUOTA_CREEP_HARVESTER = 8;
+let REPORTING_TICK_INTERVAL_SHORT = 15;
+let QUOTA_CREEP_HARVESTER = 6;
 let QUOTA_CREEP_HARVESTER_MIN = 3;
 let QUOTA_CREEP_UPGRADER = 4;
 let QUOTA_CREEP_BUILDER = 3;
 let QUOTA_CREEP_REPAIR = 3;
-let MIN_ENERGY_FOR_PRODUCTION = 1550;
+let MIN_ENERGY_FOR_PRODUCTION = 1800;
 let MIN_ENERGY_FOR_PRODUCTION_STARTUP = 300;
 let HOME_BASE_ROOM_NAME = 'W19N28';
 let PATH_REFRESH_CYCLE_TICKS = 7
@@ -42,10 +42,10 @@ let creepSpawner = {
             console.log('----------------------');
         }
 
-        spawner = Game.spawns.Spawn1;
-        room = Game.spawns.Spawn1.room.name ;
+        let spawner = Game.spawns.Spawn1;
+        let room = Game.spawns.Spawn1.room.name ;
         
-                // report creep totals to console
+        // report creep totals to console
         if (Game.time % REPORTING_TICK_INTERVAL_SHORT == 0) {
             console.log('----------------------');            
             console.log('ha: ' + harvesters.length, ',  up: ' + upgraders.length, ', bu: ' + builders.length, ', gu: ' + guards.length +
@@ -62,7 +62,7 @@ let creepSpawner = {
             ) { // spawner.room.energyCapacityAvailable
             if (harvesters.length < QUOTA_CREEP_HARVESTER-3) {  
                 if (Game.rooms[room].energyAvailable >= MIN_ENERGY_FOR_PRODUCTION) { //Game.rooms.W16N29.energyAvailable = 999
-                    let creepName = Game.spawns.Spawn1.createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester'});
+                    let creepName = Game.spawns.Spawn1.createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester'});
 //                        let creepName = Game.spawns.Spawn1.createCreep([TOUGH,TOUGH,WORK,CARRY,CARRY,CARRY,MOVE], undefined, {role: 'harvester'});
                         if (typeof(creepName) === 'string') {
                             console.log('Spawning LARGE harvester: ' + creepName);
