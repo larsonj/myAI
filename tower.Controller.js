@@ -16,8 +16,9 @@ var log = {
 }
 
 /**
- * Tower defence against attackers
- * @function
+ * Perform Tower defence against attackers
+ * @function defendRoom
+ * @param {string} roomName Current room 
  */
  function defendRoom(roomName) {
     
@@ -34,7 +35,12 @@ var log = {
     }
 }
 
-function repairRoom(roomName, structureType) {
+/**
+ * Perform Tower repairs 
+ * @function repairRoom
+ * @param {string} roomName Current room 
+ */
+ function repairRoom(roomName, structureType) {
 
     var damagedStructures = Game.rooms[roomName].find(FIND_STRUCTURES, {
         filter: (structure) => (

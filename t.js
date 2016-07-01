@@ -2,54 +2,53 @@
 var test = {
 
 	t: function () {
-//		for (creep in Game.creeps) 
-//		let targets = creep.room.find(FIND_STRUCTURES, {
-//            filter: (structure) => {  // find extensions, spawners and towers, in that order
-//                return (// structure.structureType == STRUCTURE_EXTENSION 
-//                //	|| structure.structureType == STRUCTURE_SPAWN 
-//                	structure.structureType == STRUCTURE_TOWER 
-//                	&& structure.energy < structure.energyCapacity);
-//			}
-//		});
-//		console.log(targets)
-Memory.creepDesigns = [ 
-    {role: 'harvester', size: 'S', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'harvester', size: 'S', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'harvester', size: 'S', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'harvester', size: 'S', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'harvester', size: 'S', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'builder',   size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'builder',   size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'builder',   size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'builder',   size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'builder',   size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'harvester', size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'harvester', size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'harvester', size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'harvester', size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'harvester', size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'upgrader',  size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'upgrader',  size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'upgrader',  size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'upgrader',  size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'upgrader',  size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'repair',    size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'repair',    size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'repair',    size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'repair',    size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'repair',    size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'Attack',    size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'Attack',    size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'Attack',    size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'Attack',    size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
-    {role: 'Attack',    size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]}
-]
+        //		for (creep in Game.creeps) 
+        //		let targets = creep.room.find(FIND_STRUCTURES, {
+        //            filter: (structure) => {  // find extensions, spawners and towers, in that order
+        //                return (// structure.structureType == STRUCTURE_EXTENSION 
+        //                //	|| structure.structureType == STRUCTURE_SPAWN 
+        //                	structure.structureType == STRUCTURE_TOWER 
+        //                	&& structure.energy < structure.energyCapacity);
+        //			}
+        //		});
+        //		console.log(targets)
+        Memory.creepDesigns = [ 
+            {role: 'harvester', size: 'S', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'harvester', size: 'S', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'harvester', size: 'S', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'harvester', size: 'S', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'harvester', size: 'S', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'builder',   size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'builder',   size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'builder',   size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'builder',   size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'builder',   size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'harvester', size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'harvester', size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'harvester', size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'harvester', size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'harvester', size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'upgrader',  size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'upgrader',  size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'upgrader',  size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'upgrader',  size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'upgrader',  size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'repair',    size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'repair',    size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'repair',    size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'repair',    size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'repair',    size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'Attack',    size: 'L', DEFCON: 1 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'Attack',    size: 'L', DEFCON: 2 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'Attack',    size: 'L', DEFCON: 3 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'Attack',    size: 'L', DEFCON: 4 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]},
+            {role: 'Attack',    size: 'L', DEFCON: 5 ,design: [WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE]}
+        ];
 
-_.forEach(Memory.creepDesigns, function (design) {
-    JSON.stringify(design);
-}) 
-
-
+        _.forEach(Memory.creepDesigns, function (design) {
+            JSON.stringify(design);
+        }); 
+    }
 };
 
 var reporter = {

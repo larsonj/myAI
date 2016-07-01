@@ -24,8 +24,6 @@ module.exports.loop = function() {
 
     creepController.run();
     towerController.run();
-    //towerController2.run();
-
 
     if (Game.time % GARBAGE_COLLECTION_FREQUENCY_TICKS == 0) {
         console.log('funeral march\n');
