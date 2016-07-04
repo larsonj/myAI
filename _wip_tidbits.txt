@@ -9,7 +9,8 @@
            .filter({structureType: STRUCTURE_CONTAINER})
            .value();
 
-
-           https://files.slack.com/files-pri/T0HJCPP9T-F1LABHYNM/sshot-2.png
-
-           
+// add properties to Memory
+interface Memory {
+    poolRequests: { [id: number]: PoolRequest };
+}
+declare var Memory: Memory;

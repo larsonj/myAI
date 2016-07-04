@@ -5,7 +5,7 @@ let SOURCE_AFFINITY_HARVESTER = 1;
 
 var roleHarvester = {
 
-    /** @param {Creep} creep **/
+    /** @param {creep} creep **/
     run: function(creep) {
         
 	    // creep out of energy, initiate harvest cycle
@@ -18,7 +18,8 @@ var roleHarvester = {
 	    if(!creep.memory.harvesting && creep.carry.energy == creep.carryCapacity) {
 	        creep.memory.harvesting = true;
 	        creep.say('deliver');
-	        console.log(creep.name + ' delivering ' + '['+creep.pos +']' + '['+creep.memory._move.dest.x + ',' + creep.memory._move.dest.y +']');
+	        console.log(creep.name + ' delivering ' + '['+creep.pos +']' + '['+creep.memory._move.dest.x + ',' +
+                creep.memory._move.dest.y +']');
 	    }
 	    
 	    if(!creep.memory.harvesting) { 
@@ -32,7 +33,7 @@ var roleHarvester = {
                     filter: (structure) => { 
                         return (
                             (structure.structureType == STRUCTURE_TOWER && 
-                                (structure.energy < structure.energyCapacity * 0.80)) || 
+                                (structure.energy < structure.energyCapacity * 0.55)) || 
                                  structure.structureType == STRUCTURE_EXTENSION ||
                                  structure.structureType == STRUCTURE_SPAWN ||
                                  structure.structureType == STRUCTURE_CONTAINER 

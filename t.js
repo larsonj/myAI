@@ -1,3 +1,4 @@
+let sCONS=require('constants');
 
 var test = {
 
@@ -90,9 +91,16 @@ var protoT = {
     }
 };
 
+var constants = {
+    c: function () {
+        console.log(sCONS.aConstant);
+    }
+};
+
 module.exports = protoT;
 module.exports = test;
 module.exports = reporter;
+module.exports = constants;
 
 // source keeper filter
 //Game.rooms.<insert room name>.find(FIND_HOSTILE_CREEPS, {

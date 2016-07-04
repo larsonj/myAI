@@ -1,8 +1,8 @@
-var DEBUG = true;
+var DEBUG = false;
 var loggerMsg = {
     scriptName: 'tower.Controller.js',
-    msg: null
-}
+    msg: ''
+};
 
 var log = {
     log: function (msgObj) {
@@ -13,7 +13,7 @@ var log = {
             console.log(msgObj.scriptName + ': ' + msgObj.msg);
         }    
     }
-}
+};
 
 /**
  * Perform Tower defence against attackers
@@ -36,21 +36,35 @@ var log = {
 }
 
 /**
- * Perform Tower repairs 
+ * Perform Tower repairs
  * @function repairRoom
- * @param {string} roomName Current room 
+ * @param {string} roomName Current room
+ * @param {string} structureType Type of structure to repair, blank for
+ * @param {function} filterFcn Pointer to a function that defines an optional .find() structure filter.
  */
- function repairRoom(roomName, structureType) {
+ function repairRoom(roomName, structureType, filterFcn) { // todo: add optional param logic for structureType and filterFcn
 
     var damagedStructures = Game.rooms[roomName].find(FIND_STRUCTURES, {
         filter: (structure) => (
-                    (structure.hits < structure.hitsMax && structure.structureType == STRUCTURE_WALL && structure.hits < 27000 ) ||  // todo: move constants out of file
-                    (structure.hits < structure.hitsMax && structure.structureType == STRUCTURE_RAMPART && structure.hits < 25000 ) ||
-                    (structure.hits < structure.hitsMax && structure.structureType == STRUCTURE_ROAD && structure.hits < (structure.hitsMax * 0.350))
-                )
-    });
+                     // Walls
+                    (structure.hits < structure.hitsMax &&
+                        structure.structureType == STRUCTURE_WALL &&
+                        structure.hits < 28000 ) ||  // todo: move constants out of file
+                    // Ramparts
+                    (structure.hits < structure.hitsMax &&
+                    structure.structureType == STRUCTURE_RAMPART &&
+                    structure.hits < 28000 ) ||
+                    // Storage
+                    (structure.hits < structure.hitsMax &&
+                    structure.structureType == STRUCTURE_STORAGE) ||
+                    // Roads
+                    (structure.hits < structure.hitsMax &&
+                        structure.structureType == STRUCTURE_ROAD &&
+                        structure.hits < (structure.hitsMax * 0.200))
+        )}
+    );
 
-    if(damagedStructures.length > 0) {
+    if (damagedStructures.length > 0) {
         var towers = Game.rooms[roomName].find(
             FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
 
@@ -59,7 +73,8 @@ var log = {
         towers.forEach(tower => {
                                     damagedStructuresLeft=damagedStructures.length - towerNum;
                                     if (damagedStructuresLeft) {
-                                        loggerMsg.msg = roomName +' tower repairing: ' + damagedStructures[towerNum] + ' of ' + damagedStructuresLeft;
+                                        loggerMsg.msg = roomName +' tower repairing: ' + damagedStructures[towerNum] +
+                                            ' of ' + damagedStructuresLeft;
                                         log.debug(loggerMsg);
                                         tower.repair(damagedStructures[towerNum++])
                                     }
@@ -67,14 +82,17 @@ var log = {
     }
 }
 
+/**
+ * 
+ * @type {{run: towerController.run}} Tower defence/repair loop
+ * @param {object} targetRoom
+ */
 var towerController = {
 
-    run: function () {
+    run: function (targetRoom) {
 
-        let room = Game.spawns.Spawn1.room.name;   // todo: move to memory, initialize in main.js
-
-        defendRoom(room);
-        repairRoom(room);
+        defendRoom(targetRoom);
+        repairRoom(targetRoom);
     }
 };
 
