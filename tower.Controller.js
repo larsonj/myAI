@@ -1,3 +1,5 @@
+var DEFCON = require('defenseCondition');
+
 var DEBUG = false;
 var loggerMsg = {
     scriptName: 'tower.Controller.js',
@@ -24,6 +26,7 @@ var log = {
     
     var hostiles = Game.rooms[roomName].find(FIND_HOSTILE_CREEPS);
     if(hostiles.length > 0) {
+        
         var username = hostiles[0].owner.username;
         Game.notify(`User ${username} spotted in room ${roomName}`);
         var towers = Game.rooms[roomName].find(

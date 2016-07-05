@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/larsonj/myAI#readme",
   "devDependencies": {
-    "grunt-screeps": "^1.2.1",
-    "jsdoc": "^3.4.0"
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-screeps": "^1.2.1"
   }
 }
