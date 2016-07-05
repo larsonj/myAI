@@ -2,7 +2,7 @@ let SOURCE_AFFINITY_UPGRADER = 0;
 
 var roleUpgrader = {
 
-    /** @param {Creep} creep **/
+    /** @param {creep} creep **/
     run: function(creep) {
 
 
@@ -11,7 +11,7 @@ var roleUpgrader = {
             console.log('creep: ' + creep.name, 'refuling, energy: ' + creep.carry.energy);            
         }
         if(!creep.memory.upgrading && creep.carry.energy == creep.carryCapacity) {
-            console.log('creep: ' + creep.name,' is now upgrading.  energy: ' + creep.carry.energy)
+            console.log('creep: ' + creep.name,' is upgrading controller.  energy: ' + creep.carry.energy);
             creep.memory.upgrading = true;
         }
 
