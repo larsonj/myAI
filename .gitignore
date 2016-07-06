@@ -3,4 +3,4 @@ doc/
 out/
 Gruntfile.js
 .idea/
-/secrets.json
+secrets.json
