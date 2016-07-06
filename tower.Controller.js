@@ -49,11 +49,11 @@ var log = {
                      // Walls
                     (structure.hits < structure.hitsMax &&
                         structure.structureType == STRUCTURE_WALL &&
-                        structure.hits < 38000 ) ||  // todo: move hard coded constants to settings file
+                        structure.hits < 39000 ) ||  // todo: move hard coded constants to settings file
                     // Ramparts
                     (structure.hits < structure.hitsMax &&
                     structure.structureType == STRUCTURE_RAMPART &&
-                    structure.hits < 38000 ) ||
+                    structure.hits < 39000 ) ||
                     // Storage
                     (structure.hits < structure.hitsMax &&
                     structure.structureType == STRUCTURE_STORAGE) ||
