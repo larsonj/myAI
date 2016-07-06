@@ -49,18 +49,18 @@ var log = {
                      // Walls
                     (structure.hits < structure.hitsMax &&
                         structure.structureType == STRUCTURE_WALL &&
-                        structure.hits < 35000 ) ||  // todo: move constants out of file
+                        structure.hits < 38000 ) ||  // todo: move hard coded constants to settings file
                     // Ramparts
                     (structure.hits < structure.hitsMax &&
                     structure.structureType == STRUCTURE_RAMPART &&
-                    structure.hits < 35000 ) ||
+                    structure.hits < 38000 ) ||
                     // Storage
                     (structure.hits < structure.hitsMax &&
                     structure.structureType == STRUCTURE_STORAGE) ||
                     // Roads
                     (structure.hits < structure.hitsMax &&
                         structure.structureType == STRUCTURE_ROAD &&
-                        structure.hits < (structure.hitsMax * 0.225))
+                        structure.hits < (structure.hitsMax * 0.226))
         )}
     );
 

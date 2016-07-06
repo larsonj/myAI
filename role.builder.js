@@ -16,15 +16,16 @@ var roleBuilder = {
 	        var targets = creep.room.find(FIND_CONSTRUCTION_SITES ,
 	                { filter: (structure) => { 
                         return (
-                             structure.structureType == STRUCTURE_WALL  /*||
+                             structure.structureType == STRUCTURE_WALL  ||
                              structure.structureType == STRUCTURE_RAMPART ||
                              structure.structureType == STRUCTURE_EXTENSION ||
                              structure.structureType == STRUCTURE_SPAWN ||
-                             structure.structureType == STRUCTURE_CONTAINER */
+                             structure.structureType == STRUCTURE_CONTAINER 
                                 );
                         } 
 	                }
 	        );
+            console.log('t: ', targets.length);
             if(targets.length) {
                 if(creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
                     creep.say('building');
