@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 options: {
                     email: "<%= secrets.email %>",
                     password: "<%= secrets.password %>",
-                    branch: 'master',
+                    branch: 'multiRoom',
                     ptr: false
                 },
             dist: {

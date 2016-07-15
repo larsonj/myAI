@@ -52,7 +52,7 @@ var log = {
                      // Walls
                     (structure.hits < structure.hitsMax &&
                         structure.structureType == STRUCTURE_WALL &&
-                        structure.hits < 46000 ) ||  // todo: move constants out of file
+                        structure.hits < 47000 ) ||  // todo: move constants out of file
                     // Ramparts
                     (structure.hits < structure.hitsMax &&
                     structure.structureType == STRUCTURE_RAMPART &&
