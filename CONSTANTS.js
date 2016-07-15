@@ -2,7 +2,7 @@ var settings = {
 	reporting_tick_interval: 5,
 	source_affinity_harvester: 1,
 	source_affinity_repair: 0,
-	source_affinity_upgrader: 0
+	source_affinity_upgrader: 0,
 	defcon_peace: 5,
 	defcon_cold_war: 4, // gather intel, fortify structures
 	defcon_mobilization_preparedness: 3, // maximize energy storage

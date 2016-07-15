@@ -10,7 +10,7 @@ var defenseCondition = {
         if (!Memory.DEFCON) Memory.DEFCON = s.DEFCON_PEACE;  // if DEFCON not set, default to 5, peacetime
 
         return(DEFCON)
-    }
+    },
     setReadinessLevel: function (readinessCondition) {
 
         try {
@@ -28,4 +28,4 @@ var defenseCondition = {
     }
 }
 
-modules.exports = defenseCondition;
+module.exports = defenseCondition;

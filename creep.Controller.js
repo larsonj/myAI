@@ -4,7 +4,7 @@ let REPORTING_TICK_INTERVAL_SHORT = 15;
 let QUOTA_CREEP_HARVESTER = 7;
 let QUOTA_CREEP_HARVESTER_MIN = 3;
 let QUOTA_CREEP_UPGRADER = 4;
-let QUOTA_CREEP_BUILDER = 3;
+let QUOTA_CREEP_BUILDER = 2;
 let QUOTA_CREEP_REPAIR = 3;
 let MIN_ENERGY_FOR_PRODUCTION = 1800;
 let MIN_ENERGY_FOR_PRODUCTION_STARTUP = 300;
@@ -91,7 +91,7 @@ let creepSpawner = {
     
                 } else {
                     if(builders.length < QUOTA_CREEP_BUILDER) {
-                        let creepName = Game.spawns.Spawn1.createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'builder'});
+                        let creepName = Game.spawns.Spawn1.createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'builder'});
                         if (typeof(creepName) === 'string') {
                             console.log('Spawning new builder: ' + creepName);
                             //console.log('builders: ' + builders.length);

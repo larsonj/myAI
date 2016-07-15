@@ -1,6 +1,5 @@
 node_modules/
 doc/
 out/
-Gruntfile.js
 .idea/
 secrets.json
