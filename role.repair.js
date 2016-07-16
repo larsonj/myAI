@@ -29,7 +29,7 @@ var roleHarvester = {
                         return (
                             structure.structureType == STRUCTURE_TOWER ||
                             structure.structureType == STRUCTURE_CONTAINER
-                                ) && structure.energy < structure.energyCapacity * 1.00;
+                                ) && structure.energy < structure.energyCapacity * .90;
                     }
             });
             if(targets.length > 0) {

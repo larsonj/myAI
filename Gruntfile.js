@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jsdoc');
 
     grunt.initConfig({
-            secrets: grunt.file.readJSON('../Secrets.json'),
+            secrets: grunt.file.readJSON('../secrets.json'),
             screeps: {
                 options: {
                     email: "<%= secrets.email %>",
