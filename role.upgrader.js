@@ -2,7 +2,7 @@ let SOURCE_AFFINITY_UPGRADER = 0;
 
 var roleUpgrader = {
 
-    /** @param {Creep} creep **/
+    /** @param {creep} creep **/
     run: function(creep) {
 
 

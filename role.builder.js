@@ -2,7 +2,7 @@ let SOURCE_AFFINITY_BUILDER = 0;
 
 var roleBuilder = {
 
-    /** @param {Creep} creep **/
+    /** @param {creep} creep **/
     run: function(creep) {
 
 	    if(creep.memory.building && creep.carry.energy == 0) {

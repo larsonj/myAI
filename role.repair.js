@@ -7,7 +7,7 @@ let SOURCE_AFFINITY_HARVESTER = 0;
 
 var roleHarvester = {
 
-    /** @param {Creep} creep **/
+    /** @param {creep} creep **/
     run: function(creep) {
         
 	    if(creep.memory.harvesting && creep.carry.energy == 0) {
