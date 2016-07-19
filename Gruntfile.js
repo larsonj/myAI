@@ -9,11 +9,7 @@ module.exports = function(grunt) {
                 options: {
                     email: "<%= secrets.email %>",
                     password: "<%= secrets.password %>",
-<<<<<<< HEAD
                     branch: 'master',
-=======
-                    branch: 'multiRoom',
->>>>>>> multiRoom
                     ptr: false
                 },
             dist: {
@@ -30,8 +26,4 @@ module.exports = function(grunt) {
         }
 
     });
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> multiRoom
