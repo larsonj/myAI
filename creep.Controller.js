@@ -60,7 +60,7 @@ let creepSpawner = {
             ) { // spawner.room.energyCapacityAvailable
             if (harvesters.length < QUOTA_CREEP_HARVESTER-3) {  
                 if (Game.rooms[room].energyAvailable >= MIN_ENERGY_FOR_PRODUCTION) { //Game.rooms.W16N29.energyAvailable = 999
-                    let creepName = Game.spawns.Spawn1.createCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester'});
+                    let creepName = Game.spawns.Spawn1.createCreep([WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'harvester'});
 //                        let creepName = Game.spawns.Spawn1.createCreep([TOUGH,TOUGH,WORK,CARRY,CARRY,CARRY,MOVE], undefined, {role: 'harvester'});
                         if (typeof(creepName) === 'string') {
                             console.log('Spawning LARGE harvester: ' + creepName);
