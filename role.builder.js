@@ -2,7 +2,7 @@ let SOURCE_AFFINITY_BUILDER = 0;
 
 var roleBuilder = {
 
-    /** @param {Creep} creep **/
+    /** @param {creep} creep **/
     run: function(creep) {
 
 	    if(creep.memory.building && creep.carry.energy == 0) {
@@ -13,7 +13,7 @@ var roleBuilder = {
 	    }
 
 	    if(creep.memory.building) {
-	        var targets = creep.room.find(FIND_CONSTRUCTION_SITES ,
+	        var targets = creep.room.find(FIND_CONSTRUCTION_SITES /*,
 	                { filter: (structure) => { 
                         return (
                              structure.structureType == STRUCTURE_WALL  ||
@@ -23,7 +23,7 @@ var roleBuilder = {
                              structure.structureType == STRUCTURE_CONTAINER 
                                 );
                         } 
-	                }
+	                } */
 	        );
             console.log('t: ', targets.length);
             if(targets.length) {

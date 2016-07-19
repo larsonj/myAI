@@ -1,3 +1,5 @@
+var DEFCON = require('defenseCondition');
+
 var DEBUG = false;
 var loggerMsg = {
     scriptName: 'tower.Controller.js',
@@ -24,6 +26,7 @@ var log = {
     
     var hostiles = Game.rooms[roomName].find(FIND_HOSTILE_CREEPS);
     if(hostiles.length > 0) {
+        
         var username = hostiles[0].owner.username;
         Game.notify(`User ${username} spotted in room ${roomName}`);
         var towers = Game.rooms[roomName].find(
@@ -49,18 +52,30 @@ var log = {
                      // Walls
                     (structure.hits < structure.hitsMax &&
                         structure.structureType == STRUCTURE_WALL &&
+<<<<<<< HEAD
                         structure.hits < 39000 ) ||  // todo: move hard coded constants to settings file
                     // Ramparts
                     (structure.hits < structure.hitsMax &&
                     structure.structureType == STRUCTURE_RAMPART &&
                     structure.hits < 39000 ) ||
+=======
+                        structure.hits < 80000 ) ||  // todo: move constants out of file
+                    // Ramparts
+                    (structure.hits < structure.hitsMax &&
+                    structure.structureType == STRUCTURE_RAMPART &&
+                    structure.hits < 80000 ) ||
+>>>>>>> multiRoom
                     // Storage
                     (structure.hits < structure.hitsMax &&
                     structure.structureType == STRUCTURE_STORAGE) ||
                     // Roads
                     (structure.hits < structure.hitsMax &&
                         structure.structureType == STRUCTURE_ROAD &&
+<<<<<<< HEAD
                         structure.hits < (structure.hitsMax * 0.226))
+=======
+                        structure.hits < (structure.hitsMax * 0.220))
+>>>>>>> multiRoom
         )}
     );
 

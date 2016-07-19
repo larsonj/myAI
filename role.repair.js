@@ -4,9 +4,10 @@
 
 let SOURCE_AFFINITY_HARVESTER = 0;
 
+
 var roleHarvester = {
 
-    /** @param {Creep} creep **/
+    /** @param {creep} creep **/
     run: function(creep) {
         
 	    if(creep.memory.harvesting && creep.carry.energy == 0) {
@@ -26,8 +27,10 @@ var roleHarvester = {
             var targets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => { 
                         return (
-                            structure.structureType == STRUCTURE_TOWER 
-                                ) && structure.energy < structure.energyCapacity * 1.00;
+                            structure.structureType == STRUCTURE_TOWER ||
+                            structure.structureType == STRUCTURE_CONTAINER ||
+                            structure.structureType == STRUCTURE_STORAGE
+                            ) && structure.energy < structure.energyCapacity * .85;
                     }
             });
             if(targets.length > 0) {

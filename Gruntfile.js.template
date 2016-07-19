@@ -4,13 +4,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jsdoc');
 
     grunt.initConfig({
-        screeps: {
-            options: {
-                email: 'your email',
-                password: 'your password',
-                branch: 'master',
-                ptr: false
-            },
+            secrets: grunt.file.readJSON('../secrets.json'),
+            screeps: {
+                options: {
+                    email: "<%= secrets.email %>",
+                    password: "<%= secrets.password %>",
+                    branch: 'multiRoom',
+                    ptr: false
+                },
             dist: {
                 src: ['*.js']
             }
