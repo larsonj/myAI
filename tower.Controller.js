@@ -45,26 +45,32 @@ var log = {
  * @param {string} structureType Type of structure to repair, blank for
  * @param {function} filterFcn Pointer to a function that defines an optional .find() structure filter.
  */
- function repairRoom(roomName, structureType, filterFcn) { // todo: add optional param logic for structureType and filterFcn
+function repairRoom(roomName, structureType, filterFcn) { // todo: add optional param logic for structureType and filterFcn
 
     var damagedStructures = Game.rooms[roomName].find(FIND_STRUCTURES, {
-        filter: (structure) => (
-                     // Walls
-                    (structure.hits < structure.hitsMax &&
-                        structure.structureType == STRUCTURE_WALL &&
-                        structure.hits < 80000 ) ||  // todo: move constants out of file
-                    // Ramparts
-                    (structure.hits < structure.hitsMax &&
-                    structure.structureType == STRUCTURE_RAMPART &&
-                    structure.hits < 80000 ) ||
-                    // Storage
-                    (structure.hits < structure.hitsMax &&
-                    structure.structureType == STRUCTURE_STORAGE) ||
-                    // Roads
-                    (structure.hits < structure.hitsMax &&
-                        structure.structureType == STRUCTURE_ROAD &&
-                        structure.hits < (structure.hitsMax * 0.220))
-        )}
+            filter: (structure) => (
+                // west walls
+                ((structure.pos.x === 2) &&
+                structure.hits < structure.hitsMax &&
+                structure.structureType == STRUCTURE_WALL &&
+                structure.hits < 100000 ) ||  // todo: move constants out of file
+                // n/s/e Walls
+                (structure.hits < structure.hitsMax &&
+                structure.structureType == STRUCTURE_WALL &&
+                structure.hits < 85000 ) ||
+                // Ramparts
+                (structure.hits < structure.hitsMax &&
+                structure.structureType == STRUCTURE_RAMPART &&
+                structure.hits < 85000 ) ||
+                // Storage
+                (structure.hits < structure.hitsMax &&
+                structure.structureType == STRUCTURE_STORAGE) ||
+                // Roads
+                (structure.hits < structure.hitsMax &&
+                structure.structureType == STRUCTURE_ROAD &&
+                structure.hits < (structure.hitsMax * 0.250))
+            )
+        }
     );
 
     if (damagedStructures.length > 0) {
