@@ -23,12 +23,15 @@ var log = {
  * @param {string} roomName Current room 
  */
  function defendRoom(roomName) {
-    
+    var defendingStatus = false;
+
     var hostiles = Game.rooms[roomName].find(FIND_HOSTILE_CREEPS);
     if(hostiles.length > 0) {
-        
+        defendingStatus = true;
+
         var username = hostiles[0].owner.username;
         Game.notify(`User ${username} spotted in room ${roomName}`);
+
         var towers = Game.rooms[roomName].find(
             FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}});
         towers.forEach(tower => tower.attack(hostiles[0]));
@@ -36,6 +39,7 @@ var log = {
         loggerMsg.msg = roomName +' towers defending against: ' + hostiles[0] + 'from owner: ' + username;
         log.log(loggerMsg);
     }
+    return defendingStatus;
 }
 
 /**
@@ -53,11 +57,11 @@ function repairRoom(roomName, structureType, filterFcn) { // todo: add optional 
                 ((structure.pos.x === 2) &&
                 structure.hits < structure.hitsMax &&
                 structure.structureType == STRUCTURE_WALL &&
-                structure.hits < 100000 ) ||  // todo: move constants out of file
+                structure.hits < 125000 ) ||  // todo: move constants out of file
                 // n/s/e Walls
                 (structure.hits < structure.hitsMax &&
                 structure.structureType == STRUCTURE_WALL &&
-                structure.hits < 85000 ) ||
+                structure.hits < 86000 ) ||
                 // Ramparts
                 (structure.hits < structure.hitsMax &&
                 structure.structureType == STRUCTURE_RAMPART &&
@@ -100,8 +104,9 @@ var towerController = {
 
     run: function (targetRoom) {
 
-        defendRoom(targetRoom);
-        repairRoom(targetRoom);
+        if (!defendRoom(targetRoom)) { // defendRoom returns false
+            repairRoom(targetRoom);
+        }
     }
 };
 
